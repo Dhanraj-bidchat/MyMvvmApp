@@ -1,7 +1,9 @@
-package com.dhanraj.mymvvmapp;
+package com.dhanraj.mymvvmapp.ui.splash;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.dhanraj.mymvvmapp.R;
 
 public class SplashActivity extends AppCompatActivity {
 
