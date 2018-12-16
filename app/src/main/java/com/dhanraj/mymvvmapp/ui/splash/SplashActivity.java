@@ -1,5 +1,6 @@
 package com.dhanraj.mymvvmapp.ui.splash;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.widget.Toast;
 
 import com.dhanraj.mymvvmapp.R;
 import com.dhanraj.mymvvmapp.databinding.ActivitySplashBinding;
+import com.dhanraj.mymvvmapp.ui.login.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -29,7 +31,8 @@ public class SplashActivity extends AppCompatActivity {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(SplashActivity.this, "welcome", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                startActivity(intent);
             }
         }, 700);
 
