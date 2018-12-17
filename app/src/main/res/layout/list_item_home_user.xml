@@ -1,40 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true"
-    android:orientation="vertical"
-    android:paddingBottom="14dp"
-    android:paddingLeft="14dp"
-    android:paddingRight="14dp"
-    android:paddingTop="14dp">
+<layout>
 
-    <TextView
-        android:id="@+id/tvName"
+    <data>
+
+        <variable
+            name="user"
+            type="com.dhanraj.mymvvmapp.ui.home.User" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/layout_user"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:textColor="@color/colorAccent"
-        android:textSize="16dp"
-        tools:text="dhanraj naik"
-        android:textStyle="bold" />
+        android:background="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="vertical"
+        android:paddingLeft="14dp"
+        android:paddingTop="14dp"
+        android:paddingRight="14dp"
+        android:paddingBottom="14dp">
 
-    <TextView
-        android:id="@+id/tvComment"
-        tools:text="this is a comment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tvName" />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:textColor="@color/colorAccent"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="@{user.username}"
+            tools:text="dhanraj naik" />
 
-    <TextView
-        android:id="@+id/tvEmail"
-        tools:text="dhanraj@gmail.com"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:textColor="@color/colorPrimaryDark" />
+        <TextView
+            android:id="@+id/tvComment"
+            android:text="@{user.comment}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvName"
+            tools:text="this is a comment" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/tvEmail"
+            android:text="@{user.email}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/colorPrimaryDark"
+            tools:text="dhanraj@gmail.com" />
+
+    </RelativeLayout>
+</layout>
